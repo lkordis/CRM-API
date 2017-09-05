@@ -1,0 +1,26 @@
+{
+  "name": "sedam_it_api",
+  "version": "1.0.0",
+  "description": "Simple CRM api made for testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "proxy": "lt -p 3000 -s sedamitapi"
+  },
+  "keywords": [
+    "Node.js",
+    "MongoDb",
+    "Exress"
+  ],
+  "author": "Lovro Kordiš",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10"
+  }
+}

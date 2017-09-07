@@ -1,5 +1,7 @@
 var mongoose = require('mongoose'),
-    Service = mongoose.model('Services');
+    Service = mongoose.model('Services'),
+    User = mongoose.model('User'),
+    Account = mongoose.model('Account');
 
 exports.fill = () => {
     require('./services.json').data.forEach(element => {
@@ -10,4 +12,10 @@ exports.fill = () => {
             console.log(p);
         });
     });
+}
+
+exports.accounts = () => {
+    Account.findOne({}).populate('user').populate('services').exec((err, res) => {
+        console.log(res)
+    })
 }

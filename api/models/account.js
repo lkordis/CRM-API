@@ -2,8 +2,8 @@ const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 const AccountSchema = new Schema({
-    services: [
-        { type: Schema.Types.ObjectId, ref: 'Services' }
+    products: [
+        { type: Schema.Types.ObjectId, ref: 'Products' }
     ],
     cost: Number,
     expires: Schema.Types.Date,

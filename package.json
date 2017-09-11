@@ -11,7 +11,7 @@
   "keywords": [
     "Node.js",
     "MongoDb",
-    "Exress"
+    "Epxress"
   ],
   "author": "Lovro Kordiš",
   "license": "ISC",
@@ -22,13 +22,11 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "crypto": "^1.0.1",
+    "path": "^0.12.7",
     "express": "^4.15.4",
     "express-react-views": "^0.10.2",
     "jsonwebtoken": "^7.4.3",
     "mongoose": "^4.11.10",
-    "passport": "^0.4.0",
-    "passport-jwt": "^3.0.0",
-    "passport-local": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "request": "^2.81.0"

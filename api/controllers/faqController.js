@@ -1,10 +1,8 @@
 var mongoose = require('mongoose'),
-    Account = mongoose.model('Account');
+    Faq = mongoose.model('Faq');
 
 exports.get = function (req, res) {
-    Account.findOne({ user: new mongoose.mongo.ObjectId(req.user._id) })
-        .populate('user')
-        .populate('products')
+    Faq.find({ type: req.params.type })
         .exec(function (err, account) {
             if (err) res.send(err);
             else res.json(account);

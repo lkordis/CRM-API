@@ -7,7 +7,6 @@ class Login extends React.Component {
         super(props)
     }
 
-
     render() {
         var url = `/api/auth/login?data=${encodeURI(JSON.stringify(this.props.req))}`
         return (
@@ -30,7 +29,7 @@ class Login extends React.Component {
                     <span>
                         <button type="submit">
                             Log in
-                                </button>
+                        </button>
                     </span>
                 </form>
             </div>
@@ -38,4 +37,4 @@ class Login extends React.Component {
     }
 }
 
-module.exports = Login;
+export default Login;

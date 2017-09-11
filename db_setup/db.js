@@ -5,8 +5,8 @@ var mongoose = require('mongoose'),
     Account = mongoose.model('Account');
 
 exports.fill = () => {
-    require('./support.json').data.forEach(element => {
-        var faq = new Faq(element)
+    require('./products.json').data.forEach(element => {
+        var faq = new Product(element)
         faq.save((err, p) => {
             if (err)
                 console.log(err);
@@ -21,7 +21,6 @@ exports.accounts = () => {
             var account = new Account({
                 user: user._id,
                 products: [p.id],
-                cost: 200,
                 expires: new Date
             })
 

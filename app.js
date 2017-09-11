@@ -21,10 +21,11 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 // Skripta za punjenje baze
 // require('./db_setup/db.js').fill()
+// require('./db_setup/db.js').accounts()
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/SedamIT');
+mongoose.connect('mongodb://127.0.0.1:27017/SedamIT', { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -37,6 +38,7 @@ var react_routes = require('./api/routes/react_routes')
 var account_routes = require('./api/routes/account_routes');
 var faq_routes = require('./api/routes/faq_routes');
 var malfunction_routes = require('./api/routes/malfunction_routes');
+var cart_routes = require('./api/routes/cart_routes');
 
 product_routes(app); //register the route
 service_routes(app);
@@ -45,5 +47,6 @@ react_routes(app)
 account_routes(app)
 faq_routes(app)
 malfunction_routes(app)
+cart_routes(app)
 
 console.log('SedamIT RESTful API server started on: ' + port);

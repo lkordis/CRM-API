@@ -2,6 +2,8 @@
 const jwt = require('jsonwebtoken'),
     config = require('../../config'),
     request = require('request'),
+    mongoose = require('mongoose'),
+    Account = require('../models/account'),
     User = require('../models/user');
 
 function generateToken(user) {
@@ -73,11 +75,21 @@ module.exports.register = function (req, res, next) {
         user.save(function (err, user) {
             if (err) { return next(err); }
 
-            // Respond with JWT if user was created
-            res.status(201).json({
-                token: 'JWT ' + generateToken(user),
-                user: user
-            });
+            var account = new Account({
+                user: new mongoose.Schema.Types.ObjectId(user._id),
+                expires: new Date
+            })
+
+            account.save((err, a) => {
+                if (err) res.send(err)
+                else {
+                    // Respond with JWT if user was created
+                    res.status(201).json({
+                        token: 'JWT ' + generateToken(user),
+                        user: user
+                    });
+                }
+            })
         });
     });
 }

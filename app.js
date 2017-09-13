@@ -25,7 +25,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/SedamIT', { useMongoClient: true });
+mongoose.connect('mongodb://lovroK:95LOKO95@ds135574.mlab.com:35574/sedam_it_api', { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

@@ -25,7 +25,8 @@ module.exports.login = (req, res) => {
                 token: 'JWT ' + generateToken(user),
                 user: user,
                 address: data.address,
-                dialog_name: data.dialog_name
+                dialog_name: data.dialog_name,
+                matched: data.matched
             })}`).on('error', (error) => {
                 res.send(error)
             }).on('response', response => {
